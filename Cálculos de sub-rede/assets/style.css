@@ -1,13 +1,12 @@
 body {
     margin: 0;
     background-image: url("images/giphy.gif");
-    background-repeat: no-repeat;
+    background-repeat:repeat-y;
     background-size:100%;
     bottom: 0;
     color: black;
     left: 0;
     overflow: auto;
-    padding: 3em;
     position: absolute;
     right: 0;
     text-align: center;
@@ -23,7 +22,7 @@ body {
     padding-bottom: 10px;
 }
 .titulo {
-    color: #10707f !important;
+    color: #000 !important;
 }
 .container-fluid {
     padding-top: 5%;
@@ -33,9 +32,9 @@ body {
     padding-right: 5px;
 }
 h3 {
-    color: #10707f !important;
+    color: #000 !important;
 }
 p {
-    color: #10707f;
+    color: #000;
     font-size: 18px;
 }

@@ -1,3 +1,4 @@
+<?php require_once "../functions.php"; ?>
 <!doctype html>
 <html lang="ptbr">
 <head>
@@ -18,57 +19,58 @@
            var qua = $("#quartoct").val();
            var mas = $("#masc").val();
 
+
+            $.post("../view/result.php",
+                {
+                    prioct: pri,
+                    segoct: seg,
+                    tercoct: ter,
+                    quartoct: qua,
+                    masc: mas
+                }
+                ,function (data) {
+                    $("#conteudo").html(data);
+                });
+
            if(pri < 192) {
                alert("Not a valid character");
-
-
 
            }
            else if(pri > 223) {
                alert("Not a valid character");
 
-
            }
            else if(seg < 0) {
                alert("Not a valid character");
-
 
            }
            else if(seg > 255) {
                alert("Not a valid character");
 
-
            }
            else if(ter < 0) {
                alert("Not a valid character");
-
 
            }
            else if(ter > 255) {
                alert("Not a valid character");
 
-               ;
            }
            else if(qua < 0) {
                alert("Not a valid character");
-
 
            }
            else if(qua > 255) {
                alert("Not a valid character");
 
-
            }
            else if(mas < 24) {
                alert("Not a valid character");
 
-
            }
            else if(mas > 32) {
                alert("Not a valid character");
-               $("#form-id")[0].reset();
            }
-
 
        });
        $("#prioct").keyup(function () {
@@ -100,24 +102,27 @@
         <p>Somente endereços de <span style="border-bottom:2.5px solid red">Classe C</span>, ou seja, o valor da primeira caixa deve ser entre 192 e 223.
         As caixas  2, 3 e 4 recebem no mínimo 0 e no máximo até 255. A caixa 5 pode no mínimo 24 e no máximo 32</p>
 
-        <form class="form-inline" id="form-id" method="post" action="../view/result.php">
+        <form class="form-inline" id="form-id" method="post">
             <label class="sr-only" for="inlineFormInput">Caixa1</label>
-            <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="prioct" name="prioct">
+            <input type="text" maxlength="3" class="form-control mb-2 mr-sm-2 mb-sm-0" id="prioct" name="prioct">
             <span class="ponto">.</span>
             <label class="sr-only" for="inlineFormInput">Caixa2</label>
-            <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="segoct" name="segoct">
+            <input type="text" maxlength="3" class="form-control mb-2 mr-sm-2 mb-sm-0" id="segoct" name="segoct">
             <span class="ponto">.</span>
             <label class="sr-only" for="inlineFormInput">Caixa3</label>
-            <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="tercoct" name="tercoct">
+            <input type="text" maxlength="3" class="form-control mb-2 mr-sm-2 mb-sm-0" id="tercoct" name="tercoct">
             <span class="ponto">.</span>
             <label class="sr-only" for="inlineFormInput">Caixa4</label>
-            <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="quartoct" name="quartoct">
+            <input type="text" maxlength="3" class="form-control mb-2 mr-sm-2 mb-sm-0" id="quartoct" name="quartoct">
             <span class="ponto">/</span>
             <label class="sr-only" for="inlineFormInput">Máscara</label>
-            <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="masc" name="masc">
+            <input type="text" maxlength="2" class="form-control mb-2 mr-sm-2 mb-sm-0" id="masc" name="masc">
 
-            <button id="enviar" type="submit" class="btn btn-success">Submit</button>
+            <button id="enviar" type="button" class="btn btn-success">Submit</button>
         </form>
+
+        <div id="conteudo">
+        </div>
     </div>
 </body>
 </html>

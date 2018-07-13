@@ -68,11 +68,11 @@
     }
 
     function ip($p,$s) {
-        if ($p != 192 and $s != 168) {
-            $ip = "Público";
+        if ($p == 192 and $s == 168) {
+            $ip = "Privado";
             return $ip;
         }else {
-            $ip = "Privado";
+            $ip = "Público";
             return $ip;
         }
     }
