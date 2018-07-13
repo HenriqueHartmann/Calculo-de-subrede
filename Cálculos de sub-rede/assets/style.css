@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    background-image: url("images/giphy.gif");
+    background-repeat: no-repeat;
+    background-size:100%;
+    bottom: 0;
+    color: black;
+    left: 0;
+    overflow: auto;
+    padding: 3em;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    background-size: cover;
+}
+.navbar {
+    background-color: #fff;
+}
+.container-fluid {
+
+    background:rgba(255,255,255,0.8);
+    padding-bottom: 10px;
+}
+.titulo {
+    color: #10707f !important;
+}
+.container-fluid {
+    padding-top: 5%;
+}
+.ponto {
+    color: #fff;
+    padding-right: 5px;
+}
+h3 {
+    color: #10707f !important;
+}
+p {
+    color: #10707f;
+    font-size: 18px;
+}
